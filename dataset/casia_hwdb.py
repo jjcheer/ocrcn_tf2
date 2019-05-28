@@ -59,28 +59,25 @@ def resize_padding_or_crop(target_size, ori_img, padding_value=255):
 if __name__ == "__main__":
     gnt = CASIAHWDBGNT('samples/1001-f.gnt')
 
-    full_img = np.zeros([800, 800], dtype=np.uint8)
+    full_img = np.zeros([900, 900], dtype=np.uint8)
     charset = []
     i = 0
     for img, tagcode in gnt.get_data_iter():
-        cv2.imshow('rr', img)
-        
+        # cv2.imshow('rr', img)
         try:
-            label = struct.pack('>H', tagcode).decode('gb2312')
-            cv2.waitKey(0)
-            print(label)
-            # img_padded = resize_padding_or_crop(80, img)
-            # col_idx = i%10
-            # row_idx = i//10
-            # full_img[row_idx*80:(row_idx+1)*80, col_idx*80:(col_idx+1)*80] = img_padded
-            # charset.append(label.replace('\x00', ''))
-            # if i >= 99:
-            #     cv2.imshow('rrr', full_img)
-            #     cv2.imwrite('sample.png', full_img)
-            #     cv2.waitKey(0)
-            #     print(charset)
-            #     break
-            # i += 1
+            label = struct.pack('>H', tagcode).decode('gb2312')            
+            img_padded = resize_padding_or_crop(90, img)
+            col_idx = i%10
+            row_idx = i//10
+            full_img[row_idx*90:(row_idx+1)*90, col_idx*90:(col_idx+1)*90] = img_padded
+            charset.append(label.replace('\x00', ''))
+            if i >= 99:
+                cv2.imshow('rrr', full_img)
+                cv2.imwrite('sample.png', full_img)
+                cv2.waitKey(0)
+                print(charset)
+                break
+            i += 1
         except Exception as e:
             # print(e.with_traceback(0))
             print('decode error')
