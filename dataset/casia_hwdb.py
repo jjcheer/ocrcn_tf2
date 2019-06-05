@@ -57,7 +57,7 @@ def parse_example(record):
 
 
 def load_ds():
-    input_files = ['casia_hwdb_1.0_1.1.tfrecord']
+    input_files = ['dataset/hwdb_11.tfrecord']
     ds = tf.data.TFRecordDataset(input_files)
     ds = ds.map(parse_example)
     return ds
