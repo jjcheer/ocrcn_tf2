@@ -31,15 +31,7 @@
 - CASIA-OLHWDB：在线的HWDB，格式一样，包含了约7185个汉字以及171个英文字母、数字、标点符号等，我们不用。
 
 其实你下载1.0的train和test差不多已经够了，可以直接运行 `dataset/get_hwdb_1.0_1.1.sh` 下载。原始数据下载链接点击[这里](http://www.nlpr.ia.ac.cn/databases/handwriting/Offline_database.html).
-由于原始数据过于复杂，我们使用一个类来封装数据读取过程，这是我们展示的效果：
-
-<p align="center">
-
-<img src="/home/jintian/Downloads/1240" />
-</p>
-
-
-
+由于原始数据过于复杂，我们使用一个类来封装数据读取过程.
 看到这么密密麻麻的文字相信连人类都.... 开始头疼了，这些复杂的文字能够通过一个神经网络来识别出来？？答案是肯定的.... 不有得感叹一下神经网络的强大。。上面的部分文字识别出来的结果是这样的：
 
 <p align="center">
