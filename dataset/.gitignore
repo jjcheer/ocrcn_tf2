@@ -1,3 +1,5 @@
 hwdb_raw/
 *.tfrecord
 casia_hwdb.pyhwdb_11.tfrecord
+HWDB1.1tst_gnt.tfrecord
+HWDB1.1trn_gnt.tfrecord
