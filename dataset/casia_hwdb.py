@@ -62,7 +62,7 @@ def parse_example_v2(record):
 def load_ds():
     input_files = ['dataset/HWDB1.1trn_gnt.tfrecord']
     ds = tf.data.TFRecordDataset(input_files)
-    ds = ds.map(parse_example)
+    ds = ds.map(parse_example_v2)
     return ds
 
 
